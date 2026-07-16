@@ -42,6 +42,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-white">
+      <head>
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQ7X1FEZV5"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-WQ7X1FEZV5');
+            `,
+          }}
+        />
+      </head>
       <body className="antialiased bg-white">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

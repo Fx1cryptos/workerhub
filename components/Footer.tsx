@@ -1,6 +1,6 @@
 'use client'
 
-import { Mail, Phone, MapPin, Share2, Send, Link } from 'lucide-react'
+import { Mail, Phone, MapPin, Share2, Send, Link, ExternalLink } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -20,14 +20,17 @@ export default function Footer() {
               Nigeria's leading platform for finding trusted local professionals. Quick, reliable, and transparent.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#0504AA] transition">
-                <Share2 className="w-4 h-4" />
+              <a href="https://twitter.com/Worker_Hub" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#0504AA] transition" title="X (Twitter)">
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.514l-5.106-6.674-5.865 6.674h-3.31l7.732-8.835L.424 2.25h6.679l4.632 6.122 5.509-6.122zM17.534 20.766h1.829L6.322 3.904H4.340z"/></svg>
               </a>
-              <a href="#" className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#0504AA] transition">
-                <Send className="w-4 h-4" />
+              <a href="https://www.tiktok.com/@worker_hubs" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#0504AA] transition" title="TikTok">
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.498 3.75V15.5c0 1.93-1.57 3.5-3.5 3.5s-3.5-1.57-3.5-3.5V5.5c0-.827.673-1.5 1.5-1.5s1.5.673 1.5 1.5v9.75M6.5 4h2.008v10.75c0 1.93-1.57 3.5-3.5 3.5s-3.5-1.57-3.5-3.5 1.57-3.5 3.5-3.5c.4 0 .784.067 1.146.188"/></svg>
               </a>
-              <a href="#" className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#0504AA] transition">
-                <Link className="w-4 h-4" />
+              <a href="https://www.instagram.com/workerhub247" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#0504AA] transition" title="Instagram">
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" strokeWidth="2"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" strokeWidth="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+              </a>
+              <a href="mailto:Workerhub247@gmail.com" className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#0504AA] transition" title="Email">
+                <Mail className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -66,7 +69,7 @@ export default function Footer() {
               </li>
               <li className="flex gap-3">
                 <Mail className="w-4 h-4 flex-shrink-0 text-[#0504AA]" />
-                <a href="mailto:support@workerhub.ng" className="hover:text-white transition">support@workerhub.ng</a>
+                <a href="mailto:Workerhub247@gmail.com" className="hover:text-white transition">Workerhub247@gmail.com</a>
               </li>
               <li className="flex gap-3">
                 <MapPin className="w-4 h-4 flex-shrink-0 text-[#0504AA]" />

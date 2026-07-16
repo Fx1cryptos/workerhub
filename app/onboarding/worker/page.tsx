@@ -134,7 +134,28 @@ export default function WorkerOnboarding() {
 
   const states = ['Lagos', 'Ogun', 'Oyo', 'Osun', 'Ondo', 'Ekiti', 'Abuja']
   const lgas: { [key: string]: string[] } = {
-    Lagos: ['Lekki', 'Victoria Island', 'Ikoyi', 'Ikeja', 'Shomolu', 'Bariga'],
+    Lagos: [
+      'Agege',
+      'Ajeromi-Ifelodun',
+      'Alimosho',
+      'Amuwo-Odofin',
+      'Apapa',
+      'Badagry',
+      'Epe',
+      'Eti-Osa',
+      'Ibeju-Lekki',
+      'Ifako-Ijaiye',
+      'Ikeja',
+      'Ikorodu',
+      'Kosofe',
+      'Lagos Island',
+      'Lagos Mainland',
+      'Mushin',
+      'Ojo',
+      'Oshodi-Isolo',
+      'Shomolu',
+      'Surulere',
+    ],
     Ogun: ['Abeokuta', 'Ijebu-Ode', 'Sagamu', 'Ifo'],
     Oyo: ['Ibadan', 'Oyo', 'Ogbomoso', 'Oshogbo'],
   }

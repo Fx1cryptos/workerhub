@@ -39,22 +39,41 @@ export default function HeroSearch() {
   }
 
   return (
-    <section className="bg-gradient-to-b from-white via-blue-50 to-white pt-12 pb-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-gradient-to-br from-[#0504AA] via-[#0504AA] to-blue-900 pt-20 pb-24 overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Content */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+        <div className="text-center mb-16">
+          <div className="inline-block mb-6 px-4 py-2 bg-white/10 rounded-full border border-white/20">
+            <p className="text-white text-sm font-semibold">Welcome to WorkerHub</p>
+          </div>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Find Trusted Professionals
-            <span className="block text-[#0504AA]">Near You, Instantly</span>
+            <span className="block text-blue-200">Near You, Instantly</span>
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto mb-8">
             Search verified local workers, see live availability, and connect with experts in your area. Fast, reliable, and transparent.
           </p>
+          
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <button className="px-8 py-3 bg-white text-[#0504AA] font-semibold rounded-lg hover:bg-blue-50 transition shadow-lg">
+              Find Services
+            </button>
+            <button className="px-8 py-3 bg-white/10 border border-white text-white font-semibold rounded-lg hover:bg-white/20 transition">
+              Become a Professional
+            </button>
+          </div>
         </div>
 
         {/* Search Bar */}
-        <form onSubmit={handleSearch} className="max-w-4xl mx-auto mb-12">
-          <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+        <form onSubmit={handleSearch} className="max-w-4xl mx-auto mb-16">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100 backdrop-blur-sm">
             {/* Service Category Tabs */}
             <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 mb-6">
               {services.map((svc) => (

@@ -1,6 +1,6 @@
 'use client'
 
-import { Mail, Phone, MapPin, Share2, Send, Link, ExternalLink } from 'lucide-react'
+import { Mail, Phone, MapPin, Share2, Send, Link, ExternalLink, ArrowUpRight } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -19,6 +19,12 @@ export default function Footer() {
             <p className="text-sm text-gray-400 mb-6">
               Nigeria's leading platform for finding trusted local professionals. Quick, reliable, and transparent.
             </p>
+            <div className="mb-6 pb-6 border-b border-gray-800 md:border-0">
+              <a href="https://workershub.lovable.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-[#0504AA] hover:text-[#0504AA] transition group">
+                Visit Our Other Platform
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition transform" />
+              </a>
+            </div>
             <div className="flex gap-3">
               <a href="https://twitter.com/Worker_Hub" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#0504AA] transition" title="X (Twitter)">
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.514l-5.106-6.674-5.865 6.674h-3.31l7.732-8.835L.424 2.25h6.679l4.632 6.122 5.509-6.122zM17.534 20.766h1.829L6.322 3.904H4.340z"/></svg>
@@ -83,11 +89,14 @@ export default function Footer() {
         <div className="border-t border-gray-800 mb-8"></div>
 
         {/* Bottom Footer */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-sm text-gray-400">
-            <p>&copy; 2024 WorkerHub. All rights reserved.</p>
+            <p>&copy; 2026 WorkerHub. All rights reserved.</p>
           </div>
-          <div className="flex gap-6 text-sm text-gray-400 md:justify-end">
+          <div className="text-sm text-gray-400 text-center">
+            <p>Building trust in the gig economy</p>
+          </div>
+          <div className="flex gap-6 text-sm text-gray-400 md:justify-end flex-wrap justify-center md:justify-end">
             <a href="#" className="hover:text-white transition">Privacy Policy</a>
             <a href="#" className="hover:text-white transition">Terms of Service</a>
             <a href="#" className="hover:text-white transition">Cookie Policy</a>

@@ -2,11 +2,14 @@
 
 import { Search, MapPin, CheckCircle2, Clock, Award } from 'lucide-react'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function HeroSearch() {
   const [service, setService] = useState('all')
+  const [searchQuery, setSearchQuery] = useState('')
   const [location, setLocation] = useState('')
-  const [searchSubmitted, setSearchSubmitted] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const router = useRouter()
 
   const services = [
     { id: 'all', label: 'All Services', icon: '🔧' },
@@ -17,14 +20,22 @@ export default function HeroSearch() {
     { id: 'painting', label: 'Painting', icon: '🎨' },
   ]
 
-  const handleSearch = (e: React.FormEvent) => {
+  const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSearchSubmitted(true)
-    // Scroll to results
-    setTimeout(() => {
-      const resultsSection = document.getElementById('results')
-      resultsSection?.scrollIntoView({ behavior: 'smooth' })
-    }, 100)
+    if (!searchQuery && !location) return
+
+    setIsLoading(true)
+    try {
+      // Build search query string
+      const params = new URLSearchParams()
+      if (searchQuery) params.append('q', searchQuery)
+      if (location) params.append('location', location)
+      if (service !== 'all') params.append('service', service)
+
+      router.push(`/search?${params.toString()}`)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -74,6 +85,8 @@ export default function HeroSearch() {
                   <input
                     type="text"
                     placeholder="Plumber, Electrician, Carpenter..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
                     className="w-full pl-11 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0504AA] focus:border-transparent"
                   />
                 </div>
@@ -98,10 +111,11 @@ export default function HeroSearch() {
               <div className="flex items-end">
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-8 py-3 bg-[#0504AA] text-white font-semibold rounded-lg hover:bg-[#040399] transition shadow-md flex items-center justify-center gap-2"
+                  disabled={isLoading}
+                  className="w-full sm:w-auto px-8 py-3 bg-[#0504AA] text-white font-semibold rounded-lg hover:bg-[#040399] transition shadow-md flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Search className="w-5 h-5" />
-                  <span className="hidden sm:inline">Search</span>
+                  <span className="hidden sm:inline">{isLoading ? 'Searching...' : 'Search'}</span>
                 </button>
               </div>
             </div>

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
@@ -52,12 +53,18 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo - Click to home */}
           <Link href="/" className="flex-shrink-0 flex items-center gap-2 hover:opacity-80 transition">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#0504AA] to-[#0504AA] rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">WH</span>
+            <div className="w-10 h-10 relative">
+              <Image
+                src="/workerhub-logo.svg"
+                alt="WorkerHub"
+                width={40}
+                height={40}
+                priority
+              />
             </div>
             <div className="hidden sm:flex flex-col">
               <span className="font-bold text-[#0504AA] text-lg leading-none">WorkerHub</span>
-              <span className="text-xs text-gray-600">Find Trusted Professionals</span>
+              <span className="text-xs text-gray-600">Find Trusted Professionals Near You</span>
             </div>
           </Link>
 
